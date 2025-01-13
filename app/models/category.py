@@ -6,6 +6,8 @@ from app.backend.db import Base
 from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from app.models.products import Product
+from app.models.rating import Rating
+from app.models.review import Review
 from app.models.user import User
 
 class Category(Base):
@@ -23,3 +25,5 @@ from sqlalchemy.schema import CreateTable
 print(CreateTable(Product.__table__))
 print(CreateTable(Category.__table__))
 print(CreateTable(User.__table__))
+print(CreateTable(Rating.__table__))
+print(CreateTable(Review.__table__))

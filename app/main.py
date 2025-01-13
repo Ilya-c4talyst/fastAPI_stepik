@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
-from app.routers import products, category, auth, permission
+from app.routers import products, category, auth, permission, reviews
 
 
 app = FastAPI()
@@ -15,6 +15,7 @@ app.include_router(auth.router)
 app.include_router(category.router)
 app.include_router(products.router)
 app.include_router(permission.router)
+app.include_router(reviews.router)
 
 
 if __name__ == '__main__':
