@@ -1,0 +1,23 @@
+uvicorn main:app --port 8000 --reload
+uvicorn app.main:app --reload  
+
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+brew services start postgresql@15
+psql postgres
+brew services stop postgresql@15
+brew services list
+
+CREATE USER ecommerce WITH PASSWORD 'Gngff5432';
+
+
+--- Alembic
+alembic revision --autogenerate -m "initial migration"
+
+--- Auth
+{
+  "first_name": "Ilya",
+  "last_name": "Neon",
+  "username": "LovelyViolence",
+  "email": "first@yandex.ru",
+  "password": "First123"
+}
